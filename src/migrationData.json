@@ -1,0 +1,130 @@
+{
+  "migrationTypes": [
+    {
+      "extension": "html",
+      "replacements": [
+        { "old": "vm.", "new": "" },
+        { "old": "ng-if", "new": "*ngIf" },
+        { "old": "ng-repeat=\"", "new": "*ngFor=\"let " },
+        { "old": "ng-disabled", "new": "[disabled]" },
+        { "old": "ng-model", "new": "[(ngModel)]" },
+        { "old": "ng-show=\"", "new": "[hidden]=\"!" },
+        { "old": "ng-click", "new": "(click)" },
+        {
+          "old": "&nbsp;<i class=\"fa fa-eye\"></i>",
+          "new": "<app-internal-user-indicator></app-internal-user-indicator>"
+        },
+        {
+          "old": "<i class=\"fa fa-eye\"></i>",
+          "new": "<app-internal-user-indicator></app-internal-user-indicator>"
+        },
+        { "old": "ng-hide", "new": "[hidden]" },
+        { "old": "ng-required", "new": "[required]" },
+        { "old": "uib-tooltip=", "new": "matTooltip=" },
+        { "old": "ng-change", "new": "(change)" },
+        { "old": "<label>", "new": "<mat-label class=\"full-width\">" },
+        { "old": "<label ", "new": "<mat-label " },
+        { "old": "</label>", "new": "</mat-label>" },
+        { "old": "<input ", "new": "<input matInput " },
+        { "old": "<select ", "new": "<mat-select " },
+        { "old": "</select>", "new": "</mat-select>" },
+        { "old": "<option ", "new": "<mat-option " },
+        { "old": "<option>", "new": "<mat-option>" },
+        { "old": "</option>", "new": "</mat-option>" },
+        { "old": "currency-mask", "new": "currencyMask" },
+        { "old": "form-input", "new": "class=\"full-width\"" },
+        { "old": "class=\"btn btn-default\"", "new": "mat-raised-button" },
+        { "old": "class=\"btn btn-primary\"", "new": "mat-raised-button color=\"primary\"" },
+        { "old": "class=\"btn btn-info\"", "new": "mat-raised-button" },
+        { "old": "class=\"btn btn-warning\"", "new": "mat-raised-button color=\"accent\"" },
+        { "old": "class=\"btn btn-danger\"", "new": "mat-raised-button color=\"warn\"" },
+        {
+          "old": "is-in-role=\"Admin, Underwriter\"",
+          "new": "*appIsInRole=\"'Admin, Underwriter'\""
+        },
+        { "old": "is-in-role=\"Developer\"", "new": "*appIsInRole=\"'Developer'\"" },
+        { "old": "float-left", "new": "float-left" },
+        { "old": "float-right", "new": "float-right" },
+        { "old": "ng-src=", "new": "[src]=" },
+        { "old": "ng-value=", "new": "[value]=" }
+      ]
+    },
+    {
+      "extension": "js",
+      "replacements": [
+        { "old": "var vm = this;", "new": "", "addToConstructor": "" },
+        { "old": "vm.", "new": "this.", "addToConstructor": "" },
+        { "old": "var ", "new": "let ", "addToConstructor": "" },
+        {
+          "old": "alertModal.",
+          "new": "this.modalService.alertModal.",
+          "addToConstructor": "private modalService: ModalService"
+        },
+        {
+          "old": "confirmModal.",
+          "new": "this.modalService.confirmModal.",
+          "addToConstructor": "private modalService: ModalService"
+        },
+        {
+          "old": "datacontext.",
+          "new": "this.restService.",
+          "addToConstructor": "private restService: RestService"
+        },
+        {
+          "old": ".then",
+          "new": ".subscribe",
+          "addToConstructor": ""
+        },
+        {
+          "old": "logger.",
+          "new": "this.logger.",
+          "addToConstructor": "private logger: LoggerService"
+        },
+        {
+          "old": "$state.reload();",
+          "new": "this.reloadRouteService.reloadRoute();",
+          "addToConstructor": "private reloadRouteService: ReloadRouteService"
+        },
+        {
+          "old": "config.",
+          "new": "this.config.",
+          "addToConstructor": "private configService: ConfigService"
+        },
+        {
+          "old": "$stateParams.",
+          "new": "this.route.snapshot.params.",
+          "addToConstructor": "private route: ActivatedRoute"
+        },
+        {
+          "old": "$state.go(",
+          "new": "this.router.navigate([",
+          "addToConstructor": "private router: Router"
+        },
+        { "old": "function () {", "new": "() => {", "addToConstructor": "" },
+        { "old": "function (data) {", "new": "data => {", "addToConstructor": "" },
+        { "old": "function (err) {", "new": "err => {", "addToConstructor": "" },
+        { "old": "function (error) {", "new": "error => {", "addToConstructor": "" },
+        { "old": "function (reason) {", "new": "reason => {", "addToConstructor": "" },
+        { "old": "function (response) {", "new": "response => {", "addToConstructor": "" },
+        {
+          "old": "openPopup(",
+          "new": "this.openPopupService.openPopup(",
+          "addToConstructor": "private openPopupService: OpenPopupService"
+        },
+        {
+          "old": "downloadFile(",
+          "new": "this.downloadFileService.downloadFile(",
+          "addToConstructor": "private downloadFileService: DownloadSecureFileService"
+        },
+        {
+          "old": "(let i = 0; i < ",
+          "new": "(let obj of "
+        },
+        {
+          "old": ".length; i++",
+          "new": ""
+        }
+      ]
+    }
+  ]
+}
